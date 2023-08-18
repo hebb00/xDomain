@@ -6,6 +6,7 @@ import BarChartTokenSize from "../../components/BarChartTokenSize";
 import BarChartTime from "../../components/BarChartTime";
 import TableOpportunities from "../../components/TableOpportunities";
 import NumberOpportunitySize from "../../components/NumberOpportunitySize";
+import TokensTable from "../../components/TokensTable";
 
 
 const Dashboard = () => {
@@ -164,7 +165,7 @@ const Dashboard = () => {
         {/* ROW 4 */}
         <Box
           gridColumn="span 8"
-          gridRow="span 2"
+          gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
           <Typography
@@ -174,8 +175,9 @@ const Dashboard = () => {
           >
             Opportunity Amount per Token
           </Typography>
-          <Box height="250px" mt="-20px">
-            <BarChartTokenSize isDashboard={true} />
+          <Box overflow="auto" height="400px">
+            {/* <BarChartTokenSize isDashboard={true} /> */}
+            <TokensTable/>
           </Box>
         </Box>
 
@@ -192,7 +194,7 @@ const Dashboard = () => {
           >
             Average Duration per Size
           </Typography>
-          <Box height="250px" mt="-20px">
+          <Box height="250px" >
             <BarChartTime isDashboard={true} />
           </Box>
         </Box>
