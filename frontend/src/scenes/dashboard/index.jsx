@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import BarChartDailySeize from "../../components/BarChartDailySize";
 import BarChartFrequency from "../../components/BarChartFrequency";
@@ -6,8 +6,10 @@ import BarChartTokenSize from "../../components/BarChartTokenSize";
 import BarChartTime from "../../components/BarChartTime";
 import TableOpportunities from "../../components/TableOpportunities";
 import NumberOpportunitySize from "../../components/NumberOpportunitySize";
+import OpportunityBarChart from "../../components/OppertunityBarChart";
+import TimeBarChart from "../../components/TimeBarChart";
+import DailySize from "../../components/DailySize";
 import TokensTable from "../../components/TokensTable";
-
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -15,7 +17,6 @@ const Dashboard = () => {
 
   return (
     <Box m="20px">
-
       {/* GRID & CHARTS */}
       <Box
         display="grid"
@@ -103,12 +104,12 @@ const Dashboard = () => {
 
         {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
-          gridRow="span 2"
+          gridColumn="span 7"
+          gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
           <Box
-            mt="25px"
+            my="30px"
             p="0 30px"
             display="flex "
             justifyContent="space-between"
@@ -117,16 +118,15 @@ const Dashboard = () => {
           <NumberOpportunitySize isDashboard={true} />
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <BarChartDailySeize isDashboard={true} />
+            {/* <BarChartDailySeize isDashboard={true} /> */}
+            <DailySize />
           </Box>
         </Box>
 
-
         <Box
-          gridColumn="span 4"
+          gridColumn="span 5"
           gridRow="span 3"
           backgroundColor={colors.primary[400]}
-          overflow="auto"
         >
           <Box
             display="flex"
@@ -140,31 +140,15 @@ const Dashboard = () => {
               Recent Opportunities
             </Typography>
           </Box>
-            <TableOpportunities/>
-        </Box>
+          <Box overflow="auto"  height="350px">
 
-        {/* ROW 3 */}
-        <Box
-          gridColumn="span 8"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
-          >
-            Opportunity Size Frequency
-          </Typography>
-          <Box height="250px" mt="-20px">
-            <BarChartFrequency isDashboard={true} />
+          <TableOpportunities />
           </Box>
         </Box>
 
-
         {/* ROW 4 */}
         <Box
-          gridColumn="span 8"
+          gridColumn="span 6"
           gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
@@ -173,18 +157,15 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Opportunity Amount per Token
+            Opportunity size frequency
           </Typography>
-          <Box overflow="auto" height="400px">
-            {/* <BarChartTokenSize isDashboard={true} /> */}
-            <TokensTable/>
-          </Box>
+          <OpportunityBarChart />
         </Box>
 
-         {/* ROW 5 */}
-         <Box
-          gridColumn="span 8"
-          gridRow="span 2"
+        {/* ROW 5 */}
+        <Box
+          gridColumn="span 6"
+          gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
           <Typography
@@ -194,13 +175,29 @@ const Dashboard = () => {
           >
             Average Duration per Size
           </Typography>
-          <Box height="250px" >
-            <BarChartTime isDashboard={true} />
-          </Box>
+          <TimeBarChart />
         </Box>
 
+        {/* ROW 3 */}
+         <Box
+          gridColumn="span 12"
+          gridRow="span 3"
+          backgroundColor={colors.primary[400]}
+        >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ padding: "30px 30px 0 30px" }}
+          >
+            Opportunity Amount per Token
+            <br />
+          </Typography>
+          <Box overflow="auto" height="300px">
+            <TokensTable />
+            {/* <BarChartTokenSize isDashboard={true} /> */}
+          </Box>
+        </Box>
       </Box>
-
     </Box>
   );
 };
