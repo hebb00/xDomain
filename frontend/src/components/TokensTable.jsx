@@ -126,7 +126,7 @@ export default function TokensTable() {
   const rows = token.sort((a, b) => b.amount - a.amount);
 
   return (
-    <Box>
+    <Box sx={{paddingTop:"30px"}}>
       <TableContainer component={Paper}>
         <Table bgColor={colors.primary[400]} aria-label="collapsible table">
           <TableHead>

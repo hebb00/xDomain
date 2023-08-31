@@ -104,7 +104,7 @@ const Dashboard = () => {
 
         {/* ROW 2 */}
         <Box
-          gridColumn="span 7"
+          gridColumn="span 8"
           gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
@@ -124,7 +124,7 @@ const Dashboard = () => {
         </Box>
 
         <Box
-          gridColumn="span 5"
+          gridColumn="span 4"
           gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
@@ -148,7 +148,25 @@ const Dashboard = () => {
 
         {/* ROW 4 */}
         <Box
-          gridColumn="span 6"
+          gridColumn="span 5"
+          gridRow="span 3"
+          backgroundColor={colors.primary[400]}
+        >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ padding: "30px 30px 0 30px" }}
+          >
+            Opportunity Amount per Token
+            <br />
+          </Typography>
+          <Box overflow="auto" height="370px">
+            <TokensTable />
+            {/* <BarChartTokenSize isDashboard={true} /> */}
+          </Box>
+        </Box>
+        <Box
+          gridColumn="span 7"
           gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
@@ -161,10 +179,10 @@ const Dashboard = () => {
           </Typography>
           <OpportunityBarChart />
         </Box>
-
+    
         {/* ROW 5 */}
         <Box
-          gridColumn="span 6"
+          gridColumn="span 12"
           gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
@@ -176,26 +194,6 @@ const Dashboard = () => {
             Average Duration per Size
           </Typography>
           <TimeBarChart />
-        </Box>
-
-        {/* ROW 3 */}
-         <Box
-          gridColumn="span 12"
-          gridRow="span 3"
-          backgroundColor={colors.primary[400]}
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
-          >
-            Opportunity Amount per Token
-            <br />
-          </Typography>
-          <Box overflow="auto" height="300px">
-            <TokensTable />
-            {/* <BarChartTokenSize isDashboard={true} /> */}
-          </Box>
         </Box>
       </Box>
     </Box>

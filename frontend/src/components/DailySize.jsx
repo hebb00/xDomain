@@ -50,6 +50,7 @@ export default function DailySize() {
     ],
   };
   const options = {
+    maintainAspectRatio:false,
     responsive: true,
     plugins: {
       legend: {
@@ -76,7 +77,7 @@ export default function DailySize() {
           color: colors.grey[100],
         },
         grid: {
-          color: colors.grey[100],
+          color: colors.grey[500],
         },
       },
     },
@@ -85,8 +86,9 @@ export default function DailySize() {
     <div
       style={{
         position: "relative",
-        height: "30vh",
-        width: "90%",
+        height: "40vh",
+        width: "100%",
+        paddingTop: "50px",
       }}
     >
       <Bar options={options} data={info} />

@@ -46,7 +46,7 @@ export default function OpportunityBarChart({ title }) {
       {
         label: "Opportunity size $",
         data: data.map((d) => d.frequency),
-        backgroundColor:"#6870fa",
+        backgroundColor: "#64c1ff",
       },
     ],
   };
