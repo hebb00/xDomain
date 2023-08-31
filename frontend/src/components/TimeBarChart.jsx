@@ -11,6 +11,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  LogarithmicScale,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 ChartJS.register(
@@ -19,7 +20,8 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
-  Title
+  Title,
+  LogarithmicScale
 );
 export default function TimeBarChart() {
   const theme = useTheme();
@@ -36,7 +38,7 @@ export default function TimeBarChart() {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
+  
   const info = {
     labels: data.map((d) => d.time),
     datasets: [
@@ -48,6 +50,7 @@ export default function TimeBarChart() {
     ],
   };
   const options = {
+    maintainAspectRatio:false,
     responsive: true,
     plugins: {
       legend: {
@@ -62,10 +65,11 @@ export default function TimeBarChart() {
           color: colors.grey[100],
         },
         ticks: {
-          color: colors.grey[100],
+          color: colors.grey[100],      
         },
       },
       y: {
+        type: 'logarithmic',
         title: {
           display: true,
           text: "Number of opportunities",
@@ -75,7 +79,7 @@ export default function TimeBarChart() {
           color: colors.grey[100],
         },
         grid: {
-          color: colors.grey[100],
+          color: colors.grey[500],
         },
       },
     },
@@ -83,10 +87,11 @@ export default function TimeBarChart() {
   return (
     <div
       style={{
+        display: "inline-block",
         position: "relative",
-        height: "30vh",
-        width: "39vw",
-        paddingTop: "40px",
+        width: "100%",
+        height:"45vh",
+        paddingTop: "50px",
       }}
     >
       <Bar options={options} data={info} />

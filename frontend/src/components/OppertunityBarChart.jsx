@@ -7,6 +7,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  LogarithmicScale,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import useFetchData from "../hooks/useFetchData";
@@ -19,7 +20,8 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  LogarithmicScale,
 );
 
 export default function OpportunityBarChart({ title }) {
@@ -44,11 +46,12 @@ export default function OpportunityBarChart({ title }) {
       {
         label: "Opportunity size $",
         data: data.map((d) => d.frequency),
-        backgroundColor: "#64c1ff",
+        backgroundColor:"#6870fa",
       },
     ],
   };
   const options = {
+    maintainAspectRatio:false,
     responsive: true,
     plugins: {
       legend: {
@@ -67,17 +70,18 @@ export default function OpportunityBarChart({ title }) {
         },
       },
       y: {
+        type: 'logarithmic',
+
         title: {
           display: true,
           text: "frequency",
           color: colors.grey[100],
         },
         ticks: {
-          autoSkipPadding: 0,
           color: colors.grey[100],
         },
         grid: {
-          color: colors.grey[100],
+          color: colors.grey[500],
         },
       },
     },
@@ -86,9 +90,9 @@ export default function OpportunityBarChart({ title }) {
     <div
       style={{
         position: "relative",
-        height: "30vh",
-        width: "40vw",
-        paddingTop: "40px",
+        height: "45vh",
+        width: "100%",
+        paddingTop: "50px",
       }}
     >
       <Bar options={options} data={info} />
