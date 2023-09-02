@@ -90,7 +90,7 @@ export default function OpportunityBarChart({ title }) {
     <div
       style={{
         position: "relative",
-        height: "45vh",
+        height: "40vh",
         width: "100%",
         paddingTop: "50px",
       }}

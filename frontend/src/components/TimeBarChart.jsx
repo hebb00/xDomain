@@ -90,7 +90,7 @@ export default function TimeBarChart() {
         display: "inline-block",
         position: "relative",
         width: "100%",
-        height:"45vh",
+        height:"40vh",
         paddingTop: "50px",
       }}
     >

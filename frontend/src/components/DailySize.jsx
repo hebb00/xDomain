@@ -86,7 +86,7 @@ export default function DailySize() {
     <div
       style={{
         position: "relative",
-        height: "40vh",
+        height: "35vh",
         width: "100%",
         paddingTop: "50px",
       }}
