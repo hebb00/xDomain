@@ -45,7 +45,7 @@ export default function DailySize() {
         label: "Amount per day",
         data: data.map((d) => d.amount),
         barThickness: 15,
-        backgroundColor: "#6cebc7",
+        backgroundColor: "#00d7cb",
       },
     ],
   };

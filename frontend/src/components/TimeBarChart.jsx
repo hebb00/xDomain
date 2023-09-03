@@ -45,7 +45,7 @@ export default function TimeBarChart() {
       {
         label: "amount",
         data: data.map((d) => d.amount),
-        backgroundColor: "#6cebc7",
+        backgroundColor: "#00d7cb",
       },
     ],
   };
