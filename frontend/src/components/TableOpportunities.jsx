@@ -32,19 +32,14 @@ const TableOpportunities = ({ isDashboard = false }) => {
         >
           <Box>
             <Typography
-              color={colors.greenAccent[500]}
+              color={colors.grey[100]}
               variant="h5"
-              fontWeight="600"
             >
               {opportunity.token}
             </Typography>
           </Box>
           <Box
-            backgroundColor={colors.greenAccent[500]}
-            ml="center"
-            p="5px 10px"
-            borderRadius="4px"
-          >
+            color={colors.grey[100]}>
             ${(Number(opportunity.amount).toFixed(2))}
           </Box>
         </Box>

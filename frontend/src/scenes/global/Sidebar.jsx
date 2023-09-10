@@ -14,9 +14,6 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   return (
     <MenuItem
       active={selected === title}
-      style={{
-        color: colors.grey[100],
-      }}
       onClick={() => setSelected(title)}
       icon={icon}
     >
@@ -36,7 +33,8 @@ const Sidebar = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
+          background: `#1f2a40 !important`,
+          height:"160vh"
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -60,7 +58,6 @@ const Sidebar = () => {
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
-              color: colors.grey[100],
             }}
           >
             {!isCollapsed && (
@@ -71,7 +68,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                  <MenuOutlinedIcon />
+                  <MenuOutlinedIcon style={{color:"#fff"}}  />
                 </IconButton>
               </Box>
             )}
